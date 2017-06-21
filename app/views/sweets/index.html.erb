@@ -1,0 +1,32 @@
+<!--初期設定の状態-->
+<!--<h1>Sweets#index</h1>-->
+<!--<p>Find me in app/views/sweets/index.html.erb</p>-->
+
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    
+    <!--メッセージ表示部分　sweeterでは使わない-->
+    <!--<p><%= notice %></p>-->
+
+    <h2>Sweeter / スィーツ情報一覧</h2>
+      <%= link_to "スィーツ情報の登録", new_sweet_path, class: 'btn btn-info' %>
+      <br>
+    <% @sweets.each do |sweet| %>
+      <div class="row">
+        <p><%= sweet.content %></p>
+        <!--<p style="text-align:left;">-->
+        <!--  <%= sweet.id %></p>-->
+        <div style="text-align:right;">
+        <!--<a><%= sweet.id %></a><a>　</a>-->
+        <%= link_to "編集", edit_sweet_path(sweet.id), class: 'btn btn-default btn-sm btn-primary' %>
+        <%= link_to "削除", sweet_path(sweet.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+        </div>
+      </div>
+    <% end %>
+    
+    <div id="page-top-btn" class="page-top-btn">
+      <p><a class="move-page-top" id="move-page-top">▲</a></p>
+    </div>
+  
+  </div>
+</div>
