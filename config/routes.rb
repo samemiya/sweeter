@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  get 'top/index'
+
   # rails g で追加作成されたコマンド
   # get 'sweets/index'
 
-  # 試験的に書いたコード、下のコードが汎用的な書き方(DIVE03)
+  # 試験的に書いたコード、下のコードが汎用的な書き方(DIVE03_Rails基礎３)
   # get 'sweets' => 'sweets#index' 
 
   resources :sweets, only: [:index, :new, :create, :edit, :update, :destroy] do
@@ -11,7 +13,8 @@ Rails.application.routes.draw do
     end
   end
   
-  root 'sweets#index'
+  # root 'sweets#index'
+  root 'top#index'
    
 end
 

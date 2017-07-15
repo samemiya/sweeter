@@ -42,6 +42,7 @@ group :development, :test do
   gem 'spring'
 end
 
+# DIVE04_Bootstrap で編集　管理画面用のgem
 gem 'twitter-bootstrap-rails'
 
 gem 'rails_12factor', group: :production
@@ -57,5 +58,5 @@ group :development do
   gem 'letter_opener_web'
 end
 
-# DIVE12 にて追加　管理画面用のgem
+# DIVE12_管理画面 で編集　管理画面用のgem
 gem 'rails_admin'
